@@ -1,0 +1,48 @@
+{
+  "name": "nightsports",
+  "type": "project",
+  "license": "MIT",
+  "description": "nightsports.de website",
+  "homepage": "http://nightsports.de",
+  "config": {
+    "preferred-install": "dist",
+    "generate-salts": true,
+    "secure-http": false
+  },
+  "autoload": {
+    "psr-0": {"Roots\\Bedrock\\Installer": "scripts"}
+  },
+  "scripts": {
+    "post-root-package-install": ["Roots\\Bedrock\\Installer::addSalts"]
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
+    }
+  ],
+  "require": {
+    "php": ">=5.4",
+    "composer/installers": ">=v1.0.12",
+    "vlucas/phpdotenv": ">=1.0.9",
+    "johnpbloch/wordpress": ">=4.4.2",
+    "wpackagist-plugin/advanced-responsive-video-embedder": ">=5.3.3",
+    "wpackagist-plugin/google-analytics-for-wordpress": ">=5.3.3",
+    "wpackagist-plugin/pretty-link": ">=1.6.5",
+    "wpackagist-plugin/ninja-forms": ">=2.9.7",
+    "wpackagist-plugin/wordpress-seo": ">=2.0.1",
+    "wpackagist-plugin/w3-total-cache": ">=0.9.4.1",
+    "wpackagist-plugin/rel-nofollow-checkbox": ">=1.1.4",
+    "wpackagist-plugin/shareaholic": ">=7.8.0.2",
+    "wpackagist-plugin/siteorigin-panels": "2.4.21",
+    "wpackagist-plugin/so-widgets-bundle": "1.7.2"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  }
+}
