@@ -4,3 +4,4 @@ web/wp
 web/app/languages
 .env
 log
+web/app/uploads
