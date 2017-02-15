@@ -11,7 +11,7 @@ set :tmp_dir, ENV['PROD_TMP_DIR']
 
 # Extended Server Syntax
 # ======================
-server 'home544133102.1and1-data.host', user: 'u78512415', roles: %w{web app db}
+server 'home521512186.1and1-data.host', user: 'u76768874', roles: %w{web app db}
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
@@ -25,6 +25,6 @@ server 'home544133102.1and1-data.host', user: 'u78512415', roles: %w{web app db}
 
 fetch(:default_env).merge!(wp_env: :production)
 
-set :wpcli_remote_url, 'http://www.littlebluebag.de'
-set :wpcli_local_url, 'http://localhost:9000'
+set :wpcli_remote_url, 'http://skunkworks.mindblast.info'
+set :wpcli_local_url, 'http://localhost:8080'
 set :wpcli_options, [ ]

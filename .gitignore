@@ -3,3 +3,4 @@ web/app/plugins
 web/wp
 web/app/languages
 .env
+log

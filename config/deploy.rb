@@ -1,8 +1,5 @@
-set :application, 'littlebluebag.de'
-set :repo_url, 'git@github.com:gelli/littlebluebag.de.git'
-
-# ....other configuration
-set :git_strategy, Capistrano::Git::SubmoduleStrategy
+set :application, 'nightsports.de'
+set :repo_url, 'git@github.com:gelli/nightsports.git'
 
 set :wpcli_rsync_options, %w[-avz --rsh=ssh --iconv=utf-8-mac,utf-8]
 
@@ -83,56 +80,56 @@ namespace :deploy do
     end
   end
 end
-after 'deploy:publishing', 'deploy:update_config'
+#after 'deploy:publishing', 'deploy:update_config'
 
 
 
 # Build dist files in the sage theme. This is done locally
 # and then pushed on the server
-set :theme_path, Pathname.new('web/app/themes/stonyray')
-set :local_app_path, Pathname.new('.')
-set :local_theme_path, fetch(:local_app_path).join(fetch(:theme_path))
+#set :theme_path, Pathname.new('web/app/themes/stonyray')
+#set :local_app_path, Pathname.new('.')
+#set :local_theme_path, fetch(:local_app_path).join(fetch(:theme_path))
 
-namespace :assets do
-  task :compile do
-    run_locally do
-      within fetch(:local_theme_path) do
-        execute :gulp, '--production'
-      end
-    end
-  end
+#namespace :assets do
+#  task :compile do
+#    run_locally do
+#      within fetch(:local_theme_path) do
+#        execute :gulp, '--production'
+#      end
+#    end
+#  end
 
-  task :copy do
-    # invoke 'deploy:compile_assets'
+#  task :copy do
+#    # invoke 'deploy:compile_assets'
 
-    on roles(:web) do
-      upload! fetch(:local_theme_path).join('dist').to_s, release_path.join(fetch(:theme_path)), recursive: true
-    end
-  end
+#    on roles(:web) do
+#      upload! fetch(:local_theme_path).join('dist').to_s, release_path.join(fetch(:theme_path)), recursive: true
+#    end
+#  end
 
-  task :cleanup do
-    on roles(:web) do
-      within fetch(:release_path).join(fetch(:theme_path)) do
-        execute :rm, '-rf', "assets"
-        #execute :rm, '-f', ".bowerrc"
-        #execute :rm, '-f', ".editorconfig"
-        #execute :rm, '-f', ".git"
-        #execute :rm, '-f', ".gitignore"
-        #execute :rm, '-f', ".jscsrc"
-        #execute :rm, '-f', ".jshintrc"
-        #execute :rm, '-f', ".travis.yml"
-        execute :rm, '-f', "bower.json"
-        execute :rm, '-f', "gulpfile.js"
-        execute :rm, '-f', "package.json"
-        execute :rm, '-f', "ruleset.xml"
-      end
-    end
-  end
+#  task :cleanup do
+#    on roles(:web) do
+#      within fetch(:release_path).join(fetch(:theme_path)) do
+#        execute :rm, '-rf', "assets"
+#        #execute :rm, '-f', ".bowerrc"
+#        #execute :rm, '-f', ".editorconfig"
+#        #execute :rm, '-f', ".git"
+#        #execute :rm, '-f', ".gitignore"
+#        #execute :rm, '-f', ".jscsrc"
+#        #execute :rm, '-f', ".jshintrc"
+#        #execute :rm, '-f', ".travis.yml"
+#        execute :rm, '-f', "bower.json"
+#        execute :rm, '-f', "gulpfile.js"
+#        execute :rm, '-f', "package.json"
+#        execute :rm, '-f', "ruleset.xml"
+#      end
+#    end
+#  end
 
-  task deploy: %w(compile copy cleanup)
-end
+#  task deploy: %w(compile copy cleanup)
+#end
 
-before 'deploy:updated', 'assets:deploy'
+#before 'deploy:updated', 'assets:deploy'
 
 # Manual commands to sync database and files
 namespace :sync do
