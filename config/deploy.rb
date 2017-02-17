@@ -28,7 +28,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push(
   'web/app/plugins/ut-twitter',
   'web/app/plugins/revslider',
   'web/app/plugins/js_composer',
-  'easy-theme-and-plugin-upgrades'
+  'web/app/plugins/easy-theme-and-plugin-upgrades'
 )
 
 # woothemes-sensei installed manually (paid plugin)
