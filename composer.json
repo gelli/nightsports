@@ -35,7 +35,8 @@
     "wpackagist-plugin/rel-nofollow-checkbox": ">=1.1.4",
     "wpackagist-plugin/shareaholic": ">=7.8.0.2",
     "wpackagist-plugin/siteorigin-panels": "2.4.21",
-    "wpackagist-plugin/so-widgets-bundle": "1.7.2"
+    "wpackagist-plugin/so-widgets-bundle": "1.7.2",
+    "wpackagist-plugin/contact-form-7": "4.6.1"
   },
   "extra": {
     "installer-paths": {

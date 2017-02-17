@@ -25,10 +25,10 @@ set :linked_dirs, fetch(:linked_dirs, []).push(
   'web/app/plugins/ut-portfolio',
   'web/app/plugins/ut-pricing',
   'web/app/plugins/ut-shortcodes',
-  'web/app/plugins/ut-twitter'
+  'web/app/plugins/ut-twitter',
   'web/app/plugins/revslider',
   'web/app/plugins/js_composer',
-  'web/app/plugins/contact-form-7'
+  'easy-theme-and-plugin-upgrades'
 )
 
 # woothemes-sensei installed manually (paid plugin)
