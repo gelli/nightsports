@@ -20,12 +20,21 @@ set :log_level, :info
 # it needs to be added to linked_files so it persists across deploys:
 set :linked_files, fetch(:linked_files, []).push('.env', 'web/.htaccess')
 # set :linked_files, fetch(:linked_files, []).push('.env')
-set :linked_dirs, fetch(:linked_dirs, []).push('web/app/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push(
+  'web/app/uploads',
+  'web/app/plugins/ut-portfolio',
+  'web/app/plugins/ut-pricing',
+  'web/app/plugins/ut-shortcodes',
+  'web/app/plugins/ut-twitter'
+  'web/app/plugins/revslider',
+  'web/app/plugins/js_composer',
+  'web/app/plugins/contact-form-7'
+)
 
 # woothemes-sensei installed manually (paid plugin)
-set :linked_dirs, fetch(:linked_dirs, []).push('web/app/plugins/woothemes-sensei')
-set :linked_dirs, fetch(:linked_dirs, []).push('web/app/plugins/woothemes-updater')
-set :linked_dirs, fetch(:linked_dirs, []).push('web/app/plugins/instagram-feed-pro')
+#set :linked_dirs, fetch(:linked_dirs, []).push('web/app/plugins/woothemes-sensei')
+#set :linked_dirs, fetch(:linked_dirs, []).push('web/app/plugins/woothemes-updater')
+#set :linked_dirs, fetch(:linked_dirs, []).push('web/app/plugins/instagram-feed-pro')
 
 set :default_env, { path: "~/bin:$PATH" }
 
