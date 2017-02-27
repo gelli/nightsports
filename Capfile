@@ -14,7 +14,7 @@ require "capistrano/scm/git"
 install_plugin Capistrano::SCM::Git
 
 # Use wpcli to sync uploads and database
-#require 'capistrano/wpcli'
+require 'capistrano/wpcli'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 # Customize this path to change the location of your custom tasks.
